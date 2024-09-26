@@ -1,0 +1,226 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.layout-options {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.layout-options > div {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.layout-options > div:hover {
+    background-color: #eaeaea;
+}
+
+.input-area {
+    margin: 20px 0;
+}
+
+.input-area input {
+    width: calc(33% - 10px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-area button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background-color: #0056b3;
+}
+
+.output {
+    margin-top: 20px;
+    /* padding: 10px; */
+    /* border: 2px solid #ccc; */
+    border-radius: 8px;
+    /* background: #f9f9f9; */
+    width: fit-content;
+    height: auto;
+}
+
+
+.layout1{
+    background: #9a6fff;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 600px;
+    height: 600px;
+    gap: 28px;
+    /* scale: 0.5; */
+    text-align: start;
+    position: static;
+}
+.layout1::before {
+   
+    z-index: 1; /* Lower than the background image */
+}
+.layout1 .layout-title{
+    font-size: 64px;
+    /* max-width: 70%; */
+   
+    margin: 0;
+}
+.layout-title{
+    text-align: start; 
+    font-size: 64px;
+    max-width: 70%;
+    margin: 0; 
+}
+.layout-image{
+    width: 96px;
+    height: auto;
+    margin: 0;
+    
+}
+.layout-description{
+    text-align: start;
+    font-size: 20px;
+    margin: 0;
+}
+
+.roboto-mono-heading {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .draggable-title {
+  position: absolute;
+    cursor: move;
+ 
+    color: white;
+    font-size: 24px;
+    border-radius: 8px;
+}
+.layout2 {
+    background: #9a6fff;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    gap: 28px;
+    text-align: center;
+}
+.layout2 .layout-title{
+font-size: 64px;
+max-width: 80%;
+text-align: center;
+}
+
+.layout3 {
+    background: #9a6fff;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 600px;
+    height: 600px;
+    gap: 28px;
+}
+
+
+
+
+
+
+
+.layout-content {
+    position: relative; /* Ensure the elements are relative to their container */
+    width: 80%; /* You can adjust width as needed */
+    height: 80%; /* Adjust height if necessary */
+  }
+
+  .layout-title,
+  .layout-description,
+  .layout-image {
+    position: absolute; 
+  }
+
+  .layout-title {
+    /* top: 20px;
+    left: 20px; */
+    width: 400px;
+    color: #333;
+    cursor: move; /* Show a move cursor when hovering over the title */
+    /* max-width: 300px; */
+  }
+
+  .layout-description {
+    /* top: 100px;
+    left: 20px; */
+    /* width: 500px; */
+    color: #666;
+    cursor: move;
+  }
+
+  .layout-image {
+    /* top: 200px;
+    left: 20px; */
+    width: 150px;
+    height: 150px;
+    cursor: move;
+  }
+  .resize-handle {
+    position: absolute;
+    width: 10px; /* Handle size */
+    height: 10px; /* Handle size */
+    background: #007BFF; /* Color for resize handle */
+    right: 0;
+    bottom: 0;
+    cursor: nwse-resize; /* Cursor style */
+    z-index: 10; /* Make sure it appears on top */
+}
+
+  @media (max-width: 600px) {
+    .layout1, .layout2, .layout3 {
+        width: 90%; /* Make layouts more responsive */
+        height: auto; /* Adjust height */
+    }
+    .layout-title {
+        font-size: 32px; /* Adjust title size */
+    }
+    .layout-description {
+        font-size: 16px; /* Adjust description size */
+    }
+}

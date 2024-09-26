@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Draggable Title */
+        #draggable-title {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            cursor: move;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 24px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title Element -->
+    <div id="draggable-title">Drag Me</div>
+
+    <script>
+        // Get the draggable element
+        const draggableTitle = document.getElementById('draggable-title');
+
+        // Variables to store mouse position and element position
+        let isDragging = false, offsetX, offsetY;
+
+        // Mouse down event: start dragging
+        draggableTitle.addEventListener('mousedown', function(e) {
+            isDragging = true;
+
+            // Calculate the offset of the mouse relative to the element
+            offsetX = e.clientX - draggableTitle.offsetLeft;
+            offsetY = e.clientY - draggableTitle.offsetTop;
+
+            // Add mousemove and mouseup event listeners to the document
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+        });
+
+        // Mouse move event: move the element
+        function onMouseMove(e) {
+            if (isDragging) {
+                // Update the position of the element based on mouse movement
+                draggableTitle.style.left = e.clientX - offsetX + 'px';
+                draggableTitle.style.top = e.clientY - offsetY + 'px';
+            }
+        }
+
+        // Mouse up event: stop dragging
+        function onMouseUp() {
+            isDragging = false;
+
+            // Remove the event listeners once dragging is done
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content to Image</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Content</h1>
+
+        <!-- Layout Options -->
+        <div class="layout-options">
+            <div class="layout1 layout-option" data-layout="layout1">
+                <img src="image-url.jpg" alt="" class="layout-image">
+                <h3 class="layout-title" id="">Project Title</h3>
+                <p class="layout-description">Description of the progress made today.</p>
+            </div>
+
+            <div class="layout2 layout-option" data-layout="layout2">
+                <img src="image-url.jpg" alt="" class="layout-image">
+                <h3 class="layout-title">Topic Title</h3>
+                <p class="layout-description">Description of what was learned today.</p>
+            </div>
+
+            <div class="layout3 layout-option" data-layout="layout3">
+                <h2>Progress Update</h2>
+                <img src="image-url.jpg" alt="Project Image" class="layout-image">
+                <h3 class="layout-title">Project Name</h3>
+                <p class="layout-description">Key milestones achieved today:</p>
+                <ul class="milestones">
+                    <li class="milestone">Milestone 1</li>
+                    <li class="milestone">Milestone 2</li>
+                    <li class="milestone">Milestone 3</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Prompt Section for GPT -->
+        <div class="prompt-section">
+            <label for="prompt">Enter a short prompt for GPT:</label>
+            <input type="text" id="prompt" placeholder="Enter a short prompt">
+            <button id="generateContent">Generate with GPT</button>
+        </div>
+
+        <!-- Manual Input Section -->
+        <div class="input-area">
+            <input type="text" id="heading" placeholder="Manual Heading" required>
+            <input type="text" id="paragraph" placeholder="Manual Description" required>
+            <input type="text" id="imageUrl" placeholder="Image URL">
+            <input type="file" id="imageFile" accept="image/*">
+            <input type="text" id="bgImage" placeholder="bg Image URL">
+            <input type="file" id="bgFile" accept="image/*">
+            <div>
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+            <div>
+                <label for="textColor">Text Color:</label>
+                <input type="color" id="textColor" value="#000000">
+            </div>
+            <div>
+                <label for="bgPosition">Background Position:</label>
+                <select id="bgPosition">
+                    <option value="center">Center</option>
+                    <option value="top left">Top Left</option>
+                    <option value="top right">Top Right</option>
+                    <option value="bottom left">Bottom Left</option>
+                    <option value="bottom right">Bottom Right</option>
+                    <option value="top">Top</option>
+                    <option value="bottom">Bottom</option>
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                </select>
+            </div>
+            <button id="addContent">Add Content</button>
+            <button id="capture">Capture as Image</button>
+        </div>
+    </div>
+
+    <div id="output" class="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
